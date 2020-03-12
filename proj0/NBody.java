@@ -33,4 +33,31 @@ public class NBody {
         Planet[] planets = readPlanets(fileName);
 
     }
+
+    /* Drawing the Background */
+    drawBackground(R);
+
+
+    /* Draw Planets */
+    drawPlanets(planets);
+
+    /* Show */
+    StdDraw.show();
+
+
+    private static void drawBackground(double R) {
+        StdDraw.setScale(-R, R);
+        StdDraw.clear();
+        StdDraw.picture(0, 0, "images/starfield.jpg");
+        
+    }
+
+    private static void drawPlanets(Planet[] planets) {
+        for (Planet p : planets) {
+            p.draw();
+        }
+    }
+
+
+   
 }
